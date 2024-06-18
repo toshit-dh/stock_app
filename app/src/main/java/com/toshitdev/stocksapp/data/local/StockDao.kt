@@ -24,5 +24,5 @@ interface StockDao {
                 UPPER(:query) == symbol
         """
     )
-    suspend fun searchCompanyListing(query: String): List<CompanyListEntity>
+    suspend fun searchCompanyList(query: String): List<CompanyListEntity>
 }
