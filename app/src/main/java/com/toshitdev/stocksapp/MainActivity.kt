@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.toshitdev.stocksapp.ui.theme.StocksAppTheme
 import com.ramcosta.composedestinations.DestinationsNavHost
-import com.toshitdev.stocksapp.presentation.company_lists.NavGraphs
+import com.toshitdev.stocksapp.presentation.NavGraphs
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

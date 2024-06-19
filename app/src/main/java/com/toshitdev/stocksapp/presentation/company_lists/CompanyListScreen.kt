@@ -21,6 +21,7 @@ import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.toshitdev.stocksapp.R
+import com.toshitdev.stocksapp.presentation.destinations.CompanyInfoScreenDestination
 
 @Composable
 @Destination(start = true)
@@ -33,10 +34,10 @@ fun CompanyListScreen(
     val swipeRefreshState = rememberSwipeRefreshState(
         isRefreshing = state.isRefreshing
     )
-    Scaffold {
+    Scaffold { paddingValues ->
         Column(
             modifier = Modifier.fillMaxSize()
-                .padding(it)
+                .padding(paddingValues)
         ) {
             OutlinedTextField(
                 modifier = Modifier
@@ -62,12 +63,13 @@ fun CompanyListScreen(
                     modifier = Modifier.fillMaxSize()
                 ) {
                     items(state.companies.size) {
+                        val company = state.companies[it]
                         CompanyItem(
-                            company = state.companies[it],
+                            company = company,
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .clickable {
-                                    //navigator.navigate(CompanyInfoScreenDestination(state.companies[it].symbol))
+                                    navigator.navigate(CompanyInfoScreenDestination(company.symbol))
                                 }
                                 .padding(16.dp)
                         )
