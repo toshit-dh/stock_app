@@ -1,4 +1,4 @@
-package com.example.compose
+package com.toshitdev.stocksapp.ui.theme
 import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -15,7 +15,6 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
-import com.example.ui.theme.AppTypography
 
 private val lightScheme = lightColorScheme(
     primary = primaryLight,
@@ -219,8 +218,8 @@ val unspecified_scheme = ColorFamily(
 fun StocksAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
-    content: @Composable() () -> Unit
+    dynamicColor: Boolean = false,
+    content: @Composable () -> Unit
 ) {
   val colorScheme = when {
       dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
